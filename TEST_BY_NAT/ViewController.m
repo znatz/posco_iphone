@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "FMDatabase.h"
+#import "MyDB.h"
 
 @interface ViewController ()
+//@property (weak, nonatomic) IBOutlet UILabel *msg;
 
 @end
 
@@ -17,7 +20,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    // Background setup
+    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"topview_bg.png"]];
+    [backgroundView setOpaque:YES];
+    [self.view addSubview:backgroundView];
+    [self.view sendSubviewToBack:backgroundView];
+    
+    
+	
 }
 
 - (void)didReceiveMemoryWarning
