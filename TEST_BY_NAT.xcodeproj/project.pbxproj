@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		675E45AB1B436CAB00B63A38 /* topview_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 675E45AA1B436CAB00B63A38 /* topview_bg.png */; };
 		675E45AE1B436F9600B63A38 /* AddMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 675E45AD1B436F9600B63A38 /* AddMenuViewController.m */; };
+		675E45B01B439F4D00B63A38 /* addMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 675E45AF1B439F4D00B63A38 /* addMenu.png */; };
+		675E45B31B43A2EB00B63A38 /* ModifyMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 675E45B21B43A2EB00B63A38 /* ModifyMenuController.m */; };
 		6795E7C61B428E800060035C /* msg.png in Resources */ = {isa = PBXBuildFile; fileRef = 6795E7C51B428E800060035C /* msg.png */; };
 		67B55FCF1B3CE516009CE901 /* CusineListCtrlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B55FCE1B3CE516009CE901 /* CusineListCtrlViewController.m */; };
 		67B7AE3C1B3BE00200F076B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B7AE3B1B3BE00200F076B7 /* UIKit.framework */; };
@@ -40,6 +42,9 @@
 		675E45AA1B436CAB00B63A38 /* topview_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topview_bg.png; sourceTree = "<group>"; };
 		675E45AC1B436F9600B63A38 /* AddMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMenuViewController.h; sourceTree = "<group>"; };
 		675E45AD1B436F9600B63A38 /* AddMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMenuViewController.m; sourceTree = "<group>"; };
+		675E45AF1B439F4D00B63A38 /* addMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addMenu.png; sourceTree = "<group>"; };
+		675E45B11B43A2EB00B63A38 /* ModifyMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyMenuController.h; sourceTree = "<group>"; };
+		675E45B21B43A2EB00B63A38 /* ModifyMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyMenuController.m; sourceTree = "<group>"; };
 		6795E7C51B428E800060035C /* msg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = msg.png; sourceTree = "<group>"; };
 		67B55FCD1B3CE516009CE901 /* CusineListCtrlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CusineListCtrlViewController.h; sourceTree = "<group>"; };
 		67B55FCE1B3CE516009CE901 /* CusineListCtrlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CusineListCtrlViewController.m; sourceTree = "<group>"; };
@@ -177,6 +182,7 @@
 		67B7AE631B3BE03900F076B7 /* RESOURCE */ = {
 			isa = PBXGroup;
 			children = (
+				675E45AF1B439F4D00B63A38 /* addMenu.png */,
 				675E45AA1B436CAB00B63A38 /* topview_bg.png */,
 				67C8E7F61B435D470031975D /* order_bg.png */,
 				6795E7C51B428E800060035C /* msg.png */,
@@ -195,6 +201,8 @@
 				67FF547F1B4131F300C486BB /* BeforeSend.m */,
 				675E45AC1B436F9600B63A38 /* AddMenuViewController.h */,
 				675E45AD1B436F9600B63A38 /* AddMenuViewController.m */,
+				675E45B11B43A2EB00B63A38 /* ModifyMenuController.h */,
+				675E45B21B43A2EB00B63A38 /* ModifyMenuController.m */,
 			);
 			name = SubViewController;
 			sourceTree = "<group>";
@@ -270,6 +278,7 @@
 				6795E7C61B428E800060035C /* msg.png in Resources */,
 				67C8E7F71B435D470031975D /* order_bg.png in Resources */,
 				675E45AB1B436CAB00B63A38 /* topview_bg.png in Resources */,
+				675E45B01B439F4D00B63A38 /* addMenu.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +301,7 @@
 				67FF547B1B40D83700C486BB /* MyDB.m in Sources */,
 				67FF54801B4131F300C486BB /* BeforeSend.m in Sources */,
 				675E45AE1B436F9600B63A38 /* AddMenuViewController.m in Sources */,
+				675E45B31B43A2EB00B63A38 /* ModifyMenuController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

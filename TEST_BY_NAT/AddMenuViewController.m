@@ -60,7 +60,7 @@
 {
     [super viewDidLoad];
     // BG setup
-    UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"order_bg.png"]];
+    UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"addMenu.png"]];
     [background setOpaque:YES];
     [self.view addSubview:background];
     [self.view sendSubviewToBack:background];

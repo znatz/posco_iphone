@@ -10,7 +10,10 @@
 #import "FMDatabase.h"
 @interface MyDB : NSObject 
 + (FMDatabase *) connect;
++ (NSMutableArray *) findAllTitle ;
 + (void) insertMenu:(NSString *) title ;
-+ (void) executeUpdate:(NSString *)sql;
++ (void) updateMenuAtIndex:(NSInteger) i withTitle:(NSString *) t;
++ (void) deleteMenu:(NSInteger) i ;
++ (void) executeUpdate:(NSString *) sql;
 + (NSMutableArray *) getColumnOfIndex:(int)index FromTable:(NSString *)table;
 @end
