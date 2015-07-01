@@ -50,8 +50,8 @@
     self.OrderBeforeSend.text = [NSString stringWithFormat:@"注文しました"];
     
     NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@" ***** YYYY-MM-DD HH:mm:ss"];
-    [orderString appendString:[formatter stringFromDate:[NSDate date]]];
+    [formatter setDateFormat:@" YYYY-MM-dd HH:mm:ss"];
+    orderString = [NSString stringWithFormat:@"%@ %@",[formatter stringFromDate:[NSDate date]], orderString];
     
      
     NSString *param = [NSString stringWithFormat:@"cusine=%@", orderString];
@@ -59,8 +59,7 @@
 //    NSURLResponse * response = nil;
 //    NSError * error = nil;
     
-
-    
+   
     NSMutableURLRequest *request;
     request = [[NSMutableURLRequest alloc] init];
     [request setHTTPMethod:@"POST"];
@@ -71,15 +70,16 @@
     [request setHTTPBody:[param dataUsingEncoding:NSUTF8StringEncoding]];
 
     NSLog(@"%@", self.totalOrder[0][0]);
+/*
+    NSData * data = [NSURLConnection sendSynchronousRequest:request
+                                 returningResponse:&response
+                                             error:&error];
     
-//    NSData * data = [NSURLConnection sendSynchronousRequest:request
-//                                 returningResponse:&response
-//                                             error:&error];
-//    
-//    if (error == nil)
-//    {
-//        self.OrderBeforeSend.text = [[NSString alloc] initWithData:data encoding:NSShiftJISStringEncoding];
-//    }
+    if (error == nil)
+    {
+        self.OrderBeforeSend.text = [[NSString alloc] initWithData:data encoding:NSShiftJISStringEncoding];
+    }
+*/
     
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue]  completionHandler:^(NSURLResponse *response, NSData *d, NSError *err) {
         

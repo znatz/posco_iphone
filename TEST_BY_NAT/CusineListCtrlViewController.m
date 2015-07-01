@@ -50,7 +50,7 @@
 
     // row => title
     self.cusine = [[NSMutableArray alloc] init];
-    self.cusine = [MyDB getColumnOfIndex:1 FromTable:@"employee"];
+    self.cusine = [MyDB getColumnOfIndex:1 FromTable:@"menu"];
 
     // row => count
     self.countOfEachItem = [[NSMutableArray alloc] initWithCapacity:self.cusine.count];

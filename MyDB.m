@@ -10,13 +10,24 @@
 #import "FMDatabase.h"
 
 @implementation MyDB
-NSString * const DB_NAME = @"test.db";
+//NSString * const DB_NAME = @"test.db";
+NSString * const DB_NAME = @"tmp.db";
 
 + (FMDatabase *) connect {
-NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-NSString *db_path = [[paths objectAtIndex:0] stringByAppendingPathComponent:DB_NAME];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *db_path = [[paths objectAtIndex:0] stringByAppendingPathComponent:DB_NAME];
     FMDatabase *db = [FMDatabase databaseWithPath:db_path];
+    NSString * sql = [NSString stringWithFormat:@"create table if not exists menu (id integer primary key autoincrement, title text);"];
+    [db open];
+    [db executeStatements:sql];
     return db;
+}
+
++ (void)insertMenu:(NSString *) t {
+    FMDatabase * db = [self connect];
+    [db open];
+    [db executeStatements:[NSString stringWithFormat:@"INSERT INTO menu(title) VALUES ('%@')", t]];
+    [db close];
 }
 
 + (void)executeUpdate:(NSString *)sql {
@@ -35,12 +46,10 @@ NSString *db_path = [[paths objectAtIndex:0] stringByAppendingPathComponent:DB_N
     FMResultSet * rs = [db executeQuery:sql];
     while ([rs next]) {
         NSString * jap = [NSString stringWithUTF8String:[[rs stringForColumnIndex:index] UTF8String]];
-//        [result addObject:[rs stringForColumnIndex:index]];
         [result addObject:jap];
     }
     [db close];
-//    NSLog(@"%@", [NSString stringWithUTF8String: [result[0] UTF8String]]);
-//    NSLog(@"%@", result[0]);
+
     return result;
 }
 @end

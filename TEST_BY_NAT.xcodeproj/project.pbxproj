@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		675E45AB1B436CAB00B63A38 /* topview_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 675E45AA1B436CAB00B63A38 /* topview_bg.png */; };
+		675E45AE1B436F9600B63A38 /* AddMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 675E45AD1B436F9600B63A38 /* AddMenuViewController.m */; };
 		6795E7C61B428E800060035C /* msg.png in Resources */ = {isa = PBXBuildFile; fileRef = 6795E7C51B428E800060035C /* msg.png */; };
 		67B55FCF1B3CE516009CE901 /* CusineListCtrlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B55FCE1B3CE516009CE901 /* CusineListCtrlViewController.m */; };
 		67B7AE3C1B3BE00200F076B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B7AE3B1B3BE00200F076B7 /* UIKit.framework */; };
@@ -30,12 +32,14 @@
 		67B7AE7C1B3BF67800F076B7 /* delight.png in Resources */ = {isa = PBXBuildFile; fileRef = 67B7AE7B1B3BF67800F076B7 /* delight.png */; };
 		67B7AE7E1B3BFE1600F076B7 /* posco.png in Resources */ = {isa = PBXBuildFile; fileRef = 67B7AE7D1B3BFE1600F076B7 /* posco.png */; };
 		67C8E7F71B435D470031975D /* order_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 67C8E7F61B435D470031975D /* order_bg.png */; };
-		67FF54771B40D0BB00C486BB /* topview_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 67FF54761B40D0BB00C486BB /* topview_bg.png */; };
 		67FF547B1B40D83700C486BB /* MyDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 67FF547A1B40D83700C486BB /* MyDB.m */; };
 		67FF54801B4131F300C486BB /* BeforeSend.m in Sources */ = {isa = PBXBuildFile; fileRef = 67FF547F1B4131F300C486BB /* BeforeSend.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		675E45AA1B436CAB00B63A38 /* topview_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topview_bg.png; sourceTree = "<group>"; };
+		675E45AC1B436F9600B63A38 /* AddMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMenuViewController.h; sourceTree = "<group>"; };
+		675E45AD1B436F9600B63A38 /* AddMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMenuViewController.m; sourceTree = "<group>"; };
 		6795E7C51B428E800060035C /* msg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = msg.png; sourceTree = "<group>"; };
 		67B55FCD1B3CE516009CE901 /* CusineListCtrlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CusineListCtrlViewController.h; sourceTree = "<group>"; };
 		67B55FCE1B3CE516009CE901 /* CusineListCtrlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CusineListCtrlViewController.m; sourceTree = "<group>"; };
@@ -71,7 +75,6 @@
 		67B7AE7B1B3BF67800F076B7 /* delight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = delight.png; path = TEST_BY_NAT/delight.png; sourceTree = "<group>"; };
 		67B7AE7D1B3BFE1600F076B7 /* posco.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = posco.png; path = TEST_BY_NAT/posco.png; sourceTree = "<group>"; };
 		67C8E7F61B435D470031975D /* order_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = order_bg.png; sourceTree = "<group>"; };
-		67FF54761B40D0BB00C486BB /* topview_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = topview_bg.png; path = TEST_BY_NAT/topview_bg.png; sourceTree = "<group>"; };
 		67FF54791B40D83700C486BB /* MyDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDB.h; sourceTree = "<group>"; };
 		67FF547A1B40D83700C486BB /* MyDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDB.m; sourceTree = "<group>"; };
 		67FF547E1B4131F300C486BB /* BeforeSend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeforeSend.h; sourceTree = "<group>"; };
@@ -174,9 +177,9 @@
 		67B7AE631B3BE03900F076B7 /* RESOURCE */ = {
 			isa = PBXGroup;
 			children = (
+				675E45AA1B436CAB00B63A38 /* topview_bg.png */,
 				67C8E7F61B435D470031975D /* order_bg.png */,
 				6795E7C51B428E800060035C /* msg.png */,
-				67FF54761B40D0BB00C486BB /* topview_bg.png */,
 				67B7AE7D1B3BFE1600F076B7 /* posco.png */,
 				67B7AE7B1B3BF67800F076B7 /* delight.png */,
 			);
@@ -190,6 +193,8 @@
 				67B55FCE1B3CE516009CE901 /* CusineListCtrlViewController.m */,
 				67FF547E1B4131F300C486BB /* BeforeSend.h */,
 				67FF547F1B4131F300C486BB /* BeforeSend.m */,
+				675E45AC1B436F9600B63A38 /* AddMenuViewController.h */,
+				675E45AD1B436F9600B63A38 /* AddMenuViewController.m */,
 			);
 			name = SubViewController;
 			sourceTree = "<group>";
@@ -262,9 +267,9 @@
 				67B7AE581B3BE00200F076B7 /* MainStoryboard_iPad.storyboard in Resources */,
 				67B7AE7C1B3BF67800F076B7 /* delight.png in Resources */,
 				67B7AE7E1B3BFE1600F076B7 /* posco.png in Resources */,
-				67FF54771B40D0BB00C486BB /* topview_bg.png in Resources */,
 				6795E7C61B428E800060035C /* msg.png in Resources */,
 				67C8E7F71B435D470031975D /* order_bg.png in Resources */,
+				675E45AB1B436CAB00B63A38 /* topview_bg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +291,7 @@
 				67B55FCF1B3CE516009CE901 /* CusineListCtrlViewController.m in Sources */,
 				67FF547B1B40D83700C486BB /* MyDB.m in Sources */,
 				67FF54801B4131F300C486BB /* BeforeSend.m in Sources */,
+				675E45AE1B436F9600B63A38 /* AddMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
