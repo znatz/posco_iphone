@@ -57,19 +57,7 @@ NSString * const DB_NAME = @"tmp.db";
     FMResultSet * rs;
     
     int count = 1000;
-    
-/* 
-    Get Count of Row
-    
-    [db open];
-    rs = [db executeQuery:@"SELECT COUNT(title) FROM menu"];
-    while ([rs next]) {
-        count = [rs intForColumnIndex:0];
-    }
-    [db close];
-*/
-
-    
+     
     
     [db open];
     rs = [db executeQuery:@"SELECT * FROM menu"];

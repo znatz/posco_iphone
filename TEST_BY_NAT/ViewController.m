@@ -27,6 +27,13 @@
     [self.view addSubview:backgroundView];
     [self.view sendSubviewToBack:backgroundView];
     
+    NSUserDefaults * settings = [NSUserDefaults standardUserDefaults];
+    
+    // Setup IP if exists
+    if (![settings URLForKey:@"host"]) {
+        [settings setURL:[NSURL URLWithString:@"http://127.0.0.1:3000"] forKey:@"host"];
+    }
+
     
 	
 }

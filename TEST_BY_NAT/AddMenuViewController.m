@@ -43,6 +43,7 @@
             break;            
         default:
             [MyDB insertMenu:self.nameInput.text];
+            self.nameInput.text = @"";
             break;
     }
 }

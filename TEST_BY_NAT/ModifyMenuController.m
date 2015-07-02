@@ -50,6 +50,8 @@
                 }
                 case 2:
                     [MyDB deleteMenu:self.selectedRow + 1];
+                    self.cusine = [MyDB findAllTitle];
+                    [self.list reloadData];
                     break;
             }
             
@@ -65,6 +67,9 @@
                 {
                     NSString * title = [alertView textFieldAtIndex:0].text;
                     [MyDB updateMenuAtIndex:self.selectedRow+1 withTitle:title];
+                    [alertView textFieldAtIndex:0].text = @"";
+                    self.cusine = [MyDB findAllTitle];
+                    [self.list reloadData];
                     NSLog(@"GO EDIT");
                 }
             }
@@ -90,8 +95,6 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                       reuseIdentifier:CellIdentifier];
     }
-    
-    cell.textLabel.text = self.cusine[indexPath.row];
     
     
     /* Cell Style */
