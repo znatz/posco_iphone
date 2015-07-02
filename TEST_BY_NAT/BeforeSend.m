@@ -40,14 +40,18 @@
     NSLog(@"%d", [self.totalOrder count]);
     NSMutableString * orderString = [[NSMutableString alloc] initWithString:@""];
     for(int i=0; i<self.totalOrder.count; i++) {
-        [orderString appendString:[
-                                   NSString stringWithFormat:@"%@ %@\n",
-                                   self.totalOrder[i][0],
-                                   self.totalOrder[i][1]
-                                ]
-         ];
+        NSLog(@"%@", self.totalOrder[i][1]);
+        if ( self.totalOrder[i][1] != [[NSNumber alloc] initWithInt:0] ) {
+            [orderString appendString:[
+                                       NSString stringWithFormat:@"%@ %@\n",
+                                       self.totalOrder[i][0],
+                                       self.totalOrder[i][1]
+                                       ]
+             ];
+        } else {
+        }        
+
     }
-//    self.OrderBeforeSend.text = orderString;
 
     
     NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
@@ -55,9 +59,8 @@
     orderString = [NSString stringWithFormat:@"%@ %@",[formatter stringFromDate:[NSDate date]], orderString];
     
     self.OrderBeforeSend.text = @"注文しました";
-    [Connection sendToHost:[[NSUserDefaults standardUserDefaults] URLForKey:@"host"]  withData:orderString
-     byCaller:self.OrderBeforeSend];
 
+    [Connection sendToHost:[[NSUserDefaults standardUserDefaults] URLForKey:@"host"] withKey:[NSString stringWithFormat:@"%i", self.selectedTable] withValue:orderString byCaller:self.OrderBeforeSend];
 }
 
 - (void)didReceiveMemoryWarning

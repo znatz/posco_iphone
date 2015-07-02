@@ -13,11 +13,13 @@
 #import "BeforeSend.h"
 
 
-@interface CusineListCtrlViewController()<UITableViewDataSource,UITableViewDelegate>
+@interface CusineListCtrlViewController()<UITableViewDataSource,UITableViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 @property (weak, nonatomic) IBOutlet UILabel *total;
 @property (weak, nonatomic) IBOutlet UITableView *list;
 @property (weak, nonatomic) IBOutlet UILabel *stepper;
 @property int count;
+@property (weak, nonatomic) IBOutlet UIPickerView *tableNumber;
+@property NSInteger selectedTable;
 @property NSMutableArray *countOfEachItem;
 @property NSMutableArray *totalOrder;
 @property (strong, nonatomic) NSMutableArray *cusine;
@@ -38,14 +40,27 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // Background setup
     UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"order_bg.png"]];
     [background setOpaque:YES];
     [self.view addSubview:background];
     [self.view sendSubviewToBack:background];
     
+
+    // Reduce size of UIPickerView
+    CGAffineTransform t0 = CGAffineTransformMakeTranslation(_tableNumber.bounds.size.width/2, _tableNumber.bounds.size.height/2);
+	CGAffineTransform s0 = CGAffineTransformMakeScale(0.5, 0.5);
+	CGAffineTransform t1 = CGAffineTransformMakeTranslation(-_tableNumber.bounds.size.width/2, -_tableNumber.bounds.size.height/2);
+	self.tableNumber.transform = CGAffineTransformConcat(t0, CGAffineTransformConcat(s0, t1));
     
+    
+    
+    // Assign delegation
 	self.list.delegate = self;
     self.list.dataSource = self;
+    self.tableNumber.delegate = self;
+    self.tableNumber.dataSource = self;
     
 
     // row => title
@@ -65,8 +80,6 @@
         [self.totalOrder insertObject:cusine_count atIndex:i];
     }
     
-
- 
 }
 
 - (void)didReceiveMemoryWarning
@@ -74,6 +87,29 @@
     [super didReceiveMemoryWarning];
 }
 
+
+/* Table Selector */
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    NSInteger totalTable = 100; // TODO define it in system settings
+    return totalTable;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    NSString * titleOfRow = [NSString stringWithFormat:@"%i", row];
+    return titleOfRow;
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    self.selectedTable = row;
+    NSLog(@"%i", self.selectedTable);
+}
+
+/* List Setup */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
     return self.cusine.count;
@@ -122,15 +158,15 @@
     return 30;
 }
 
+// Send Order !IMPORTANT ****************
 - (IBAction)SendOrder:(id)sender {
     
     BeforeSend * viewController;
     viewController =[self.storyboard instantiateViewControllerWithIdentifier:@"GVC"];
     viewController.totalOrder=self.totalOrder;
+    viewController.selectedTable = self.selectedTable;
     viewController.modalTransitionStyle=UIModalTransitionStyleCrossDissolve;
     [self presentViewController:viewController animated:YES completion:nil];
-
-
 }
 
 - (IBAction)stepperTriggered:(id)sender {
@@ -144,9 +180,12 @@
     
     
     NSMutableArray* cusine_count = [[NSMutableArray alloc] init];
+    
+    // cusine title
     [cusine_count addObject:self.cusine[cusineID]];
+    // order amount
     [cusine_count addObject:[NSNumber numberWithInt:[tmp value]] ];
-//    [self.totalOrder insertObject:cusine_count atIndex:cusineID];
+    
     [self.totalOrder replaceObjectAtIndex:cusineID withObject:cusine_count];
     
     self.stepper.text =

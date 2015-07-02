@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface Connection : NSObject
++ (void) sendToHost:(NSURL *) host withKey:(NSString *) key withValue:(NSString *) value byCaller:(UITextView *)caller ;
 + (void) sendToHost:(NSURL *) host withData:(NSString *) data byCaller: (UITextView *) caller;
 @end

@@ -13,4 +13,5 @@
 @property NSMutableArray *order;
 @property (weak, nonatomic) IBOutlet UITextView *OrderBeforeSend;
 @property NSMutableArray * totalOrder;
+@property NSInteger selectedTable;
 @end
